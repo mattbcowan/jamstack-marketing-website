@@ -1,0 +1,29 @@
+{
+  "name": "marketing-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "dev:watch": "eleventy --watch --serve",
+    "dev:tailwindcss": "tailwindcss-cli build ./css/tailwind.css -o ./_site/css/tailwind.css",
+    "serve": "eleventy --serve",
+    "start": "npm-run-all --parallel dev:*",
+    "debug": "DEBUG=* eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "@contentful/rich-text-html-renderer": "^15.11.1",
+    "@tailwindcss/typography": "^0.5.2",
+    "contentful": "^9.1.18",
+    "dotenv": "^16.0.0",
+    "npm-run-all": "^4.1.5",
+    "tailwindcss-cli": "^0.1.2"
+  },
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.0"
+  }
+}

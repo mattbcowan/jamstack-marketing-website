@@ -1,0 +1,24 @@
+---
+pagination:
+  data: contentfulPages
+  size: 1
+  alias: contentfulPage
+  addAllPagesToCollection: true
+permalink: "{{contentfulPage.slug}}/"
+tags: "contentfulPage"
+layout: layout.liquid
+
+eleventyComputed: title:"{{contentfulPage.title}}"
+---
+
+<div class="prose prose-xl p-12">
+  <h1>{{ contentfulPage.title }}</h1>
+
+  {%- for block in contentfulPage.blocks -%} 
+    {% if block.sys.contentType.sys.id == "contentBlock" %} 
+      {% contentBlock block %} 
+    {% elsif block.sys.contentType.sys.id == "heroBlock" %} 
+      {% heroBlock block %} 
+    {%endif%}
+  {% endfor %}
+</div>

@@ -1,0 +1,18 @@
+---
+pagination:
+  data: contentfulBlogs
+  size: 1
+  alias: blog
+  addAllPagesToCollection: true
+permalink: "{{blog.slug}}/"
+tags: "blog"
+layout: layout.liquid
+
+eleventyComputed:
+  title: "{{blogs.title}}"
+---
+
+<div class="prose prose-xl p-12">
+  <h1>{{ blog.title }}</h1>
+  <div>{{ blog.content | documentToHtmlString }}</div>
+</div>
